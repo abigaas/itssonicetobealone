@@ -1,7 +1,7 @@
 const outputElement = document.getElementById('output');
 const inputElement = document.getElementById('input');
 
-const narrativeMessage = "[You found this old laptop in the attic. You recognize it as one of those machines that are used to access some specific kind of networks, even if you struggle to remember exactly which one. It’s covered in dust and you have no memory of ever owning it. There is a sticker with a three-headed snake on it, exactly like the one that you have on your new device. You don’t remember when you got these stickers but you really liked them, so you are pretty sure this belongs to you. You find yourself weirdly compelled to open it for some reason. As you do, you start feeling cold, as a chilling sensation goes up your spine, to your brain, to the back of your eyes]\n\n";
+const narrativeMessage = "[You found this old laptop in the attic. You recognize it as one of those machines that are used to access certain specific kinds of networks, even if you struggle to remember exactly which one. It’s covered in dust and you have no memory of ever owning it. There is a sticker with a three-headed snake on it, exactly like the one that you have on your new device. You don’t remember when you got these stickers but you really liked them, so you are pretty sure this belongs to you. You find yourself strangely compelled to open it. As you do, you start feeling cold, as a chilling sensation goes up your spine, to your brain, settling behind your eyes]\n\n";
 
 // Image URL
 const imageURL = "https://drive.google.com/thumbnail?id=1qmm-MjG23KWx1kz5FJSRUW62Zi0QbUaY";
@@ -10,7 +10,7 @@ const imageURL = "https://drive.google.com/thumbnail?id=1qmm-MjG23KWx1kz5FJSRUW6
 const imageHTML = `<img src="${imageURL}" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">`;
 
 // Display the initial message when the terminal opens
-const initialMessage = "Welcome to TrexOS! It's been 462 days since the last login. I missed you!<br><br>Type ACCESS to start.<br>";
+const initialMessage = "Welcome to TrexOS! It has been 462 days since the last login. I missed you!<br><br>Type ACCESS to start.<br>";
 
 outputElement.innerHTML = narrativeMessage + imageHTML + initialMessage;
 
@@ -137,7 +137,7 @@ function processInput(input) {
         showLoadingMessage(() => {
             switch (input.toLowerCase()) {
                 case 'help':
-                    let helpMessage = `Available commands: help, about, assistant, time, weather, news, data, status, run`;
+                    let helpMessage = `Available commands: help, about, assistant, time, weather, news, data, status, run, [DATA CORRUPTED],`;
                     if (memoryUnlocked) {
                         helpMessage += `, memory, picture`; // Include additional commands if unlocked
                     }
@@ -434,13 +434,28 @@ outputElement.innerHTML += '<br>';
                 typeText('Running BRAVE SHIELD...\n\nBRAVE SHIELD CURRENTLY ACTIVE\n\nThreats detected in the last 30 days: 0\nLocked Programs: 1\n\nAVAILABLE COMMANDS:\n\nRun Antivirus\nDisable BraveShield\n');
                 break;
                 
-              case 'disable braveshield':
-                if (styxUnlocked) {
-                typeText ('BraveShield disabled.\n')
-                } else {
-                  typeText ('Input password:\n')
-                  bravepasswordMode = 1;
-                }
+              case 'run braveshield’:
+			if (styxUnlocked) {
+			const img = document.createElement('img');
+                        img.src = "https://drive.google.com/thumbnail?id=1eigIAyQB8lxAXJwpUMi2EY0flIXObb3W";
+                        img.style.maxWidth = '100%';
+                        img.style.height = 'auto';
+                      img.style.display = 'block';  
+                    img.style.margin = '0 auto';  
+                    outputElement.appendChild(img);
+                        outputElement.innerHTML += '<br>';
+                typeText('Running BRAVE SHIELD...\n\nBRAVE SHIELD CURRENTLY INACTIVE\n\nThreats detected in the last 30 days: 0\nLocked Programs: 0\n\nAVAILABLE COMMANDS:\n\nRun Antivirus\n
+			} else {
+                                        const img = document.createElement('img');
+                        img.src = "https://drive.google.com/thumbnail?id=1eigIAyQB8lxAXJwpUMi2EY0flIXObb3W";
+                        img.style.maxWidth = '100%';
+                        img.style.height = 'auto';
+                      img.style.display = 'block';  
+                    img.style.margin = '0 auto';  
+                    outputElement.appendChild(img);
+                        outputElement.innerHTML += '<br>';
+                typeText('Running BRAVE SHIELD...\n\nBRAVE SHIELD CURRENTLY ACTIVE\n\nThreats detected in the last 30 days: 0\nLocked Programs: 1\n\nAVAILABLE COMMANDS:\n\nRun Antivirus\nDisable BraveShield\
+			}
                 break;
                 
               case 'run styx':
