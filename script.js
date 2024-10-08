@@ -1,7 +1,7 @@
 const outputElement = document.getElementById('output');
 const inputElement = document.getElementById('input');
 
-const narrativeMessage = "[You found this old laptop in the attic. You recognize it as one of those machines that are used to access certain specific kinds of networks, even if you struggle to remember exactly which one. It’s covered in dust and you have no memory of ever owning it. There is a sticker with a three-headed snake on it, exactly like the one that you have on your new device. You don’t remember when you got these stickers but you really liked them, so you are pretty sure this belongs to you. You find yourself strangely compelled to open it. As you do, you start feeling cold, as a chilling sensation goes up your spine, to your brain, settling behind your eyes]\n\n";
+const narrativeMessage = "[You found this old laptop in the attic. You recognize it as one of those machines that are used to access certain specific kinds of networks, even if you struggle to remember exactly which one. It’s covered in dust and you have no memory of ever owning it. There is a sticker with a three-headed snake on it, exactly like the one that you have on your new device. You don’t remember when you got these stickers but you really liked them, so you are pretty sure this belongs to you. You find yourself strangely compelled to open it. As you do, you start feeling cold, a chilling sensation goes up your spine, to your brain, settling behind your eyes]\n\n";
 
 // Image URL
 const imageURL = "https://drive.google.com/thumbnail?id=1qmm-MjG23KWx1kz5FJSRUW62Zi0QbUaY";
@@ -423,18 +423,6 @@ outputElement.innerHTML += '<br>';
                     break;
                 
               case 'run braveshield':
-                                        const img = document.createElement('img');
-                        img.src = "https://drive.google.com/thumbnail?id=1eigIAyQB8lxAXJwpUMi2EY0flIXObb3W";
-                        img.style.maxWidth = '100%';
-                        img.style.height = 'auto';
-                      img.style.display = 'block';  
-                    img.style.margin = '0 auto';  
-                    outputElement.appendChild(img);
-                        outputElement.innerHTML += '<br>';
-                typeText('Running BRAVE SHIELD...\n\nBRAVE SHIELD CURRENTLY ACTIVE\n\nThreats detected in the last 30 days: 0\nLocked Programs: 1\n\nAVAILABLE COMMANDS:\n\nRun Antivirus\nDisable BraveShield\n');
-                break;
-                
-              case 'run braveshield’:
 			if (styxUnlocked) {
 			const img = document.createElement('img');
                         img.src = "https://drive.google.com/thumbnail?id=1eigIAyQB8lxAXJwpUMi2EY0flIXObb3W";
@@ -444,7 +432,7 @@ outputElement.innerHTML += '<br>';
                     img.style.margin = '0 auto';  
                     outputElement.appendChild(img);
                         outputElement.innerHTML += '<br>';
-                typeText('Running BRAVE SHIELD...\n\nBRAVE SHIELD CURRENTLY INACTIVE\n\nThreats detected in the last 30 days: 0\nLocked Programs: 0\n\nAVAILABLE COMMANDS:\n\nRun Antivirus\n
+                typeText('Running BRAVE SHIELD...\n\nBRAVE SHIELD CURRENTLY INACTIVE\n\nThreats detected in the last 30 days: 0\nLocked Programs: 0\n\nAVAILABLE COMMANDS:\n\nRun Antivirus\n');
 			} else {
                                         const img = document.createElement('img');
                         img.src = "https://drive.google.com/thumbnail?id=1eigIAyQB8lxAXJwpUMi2EY0flIXObb3W";
@@ -454,8 +442,17 @@ outputElement.innerHTML += '<br>';
                     img.style.margin = '0 auto';  
                     outputElement.appendChild(img);
                         outputElement.innerHTML += '<br>';
-                typeText('Running BRAVE SHIELD...\n\nBRAVE SHIELD CURRENTLY ACTIVE\n\nThreats detected in the last 30 days: 0\nLocked Programs: 1\n\nAVAILABLE COMMANDS:\n\nRun Antivirus\nDisable BraveShield\
+                typeText('Running BRAVE SHIELD...\n\nBRAVE SHIELD CURRENTLY ACTIVE\n\nThreats detected in the last 30 days: 0\nLocked Programs: 1\n\nAVAILABLE COMMANDS:\n\nRun Antivirus\nDisable BraveShield\n');
 			}
+                break;
+                
+                              case 'disable braveshield':
+                if (styxUnlocked) {
+                typeText ('BraveShield disabled.\n')
+                } else {
+                  typeText ('Input password:\n')
+                  bravepasswordMode = 1;
+                }
                 break;
                 
               case 'run styx':
