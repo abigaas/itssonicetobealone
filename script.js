@@ -137,7 +137,7 @@ function processInput(input) {
         showLoadingMessage(() => {
             switch (input.toLowerCase()) {
                 case 'help':
-                    let helpMessage = `Available commands: help, about, assistant, time, weather, news, data, status, run, [DATA CORRUPTED],`;
+                    let helpMessage = `Available commands: help, about, assistant, time, weather, news, data, status, run, [DATA CORRUPTED]`;
                     if (memoryUnlocked) {
                         helpMessage += `, memory, picture`; // Include additional commands if unlocked
                     }
@@ -295,7 +295,7 @@ outputElement.innerHTML += '<br>';
                   if (filesUnlocked) {
                     typeText("Files unlocked. Type FILES to access your files.\n")
                   } else {
-                    typeText("Input Password:\n", () => {
+                    typeText("Input Password (You always listened to it):\n", () => {
                         passwordMode = true; // Enter password mode                     
                     });   
                      }
@@ -450,7 +450,7 @@ outputElement.innerHTML += '<br>';
                 if (styxUnlocked) {
                 typeText ('BraveShield disabled.\n')
                 } else {
-                  typeText ('Input password:\n')
+                  typeText ('Input password (Remember that day?):\n')
                   bravepasswordMode = 1;
                 }
                 break;
