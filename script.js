@@ -164,7 +164,7 @@ function processInput(input) {
                 if (remieRevealed) {
                                       typeText("Hi! I'm Remie, your virtual assistant in TrexOS! I was not going to come back. You made the right choice.\n");
 } else {
-                    typeText("Hi! I'm [DATA EXPUNGED], your virtual assistant in TrexOS! When in doubt, never forget to say "Friend"!\n");
+                    typeText("Hi! I'm [DATA EXPUNGED], your virtual assistant in TrexOS! When in doubt, never forget to say 'Friend'!\n");
   }
                     break;
                 
